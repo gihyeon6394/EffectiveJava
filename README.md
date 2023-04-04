@@ -1,6 +1,6 @@
 <h3>Effective Java</h3>
   
-Effective Java를 읽고 실습합니다.
+Effective Java를 실습합니다.
   
     
   

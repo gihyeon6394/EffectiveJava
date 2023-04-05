@@ -32,7 +32,9 @@ public class Item2 {
         Girl hani2 = new Girl();
         hani2.setMemberName("팜하니");
         hani2.setAge(21);
-        hani2.setHeight(160); // 이 즈음에서 런타임 에러가 난다면? -> 객체가 불완전함
+        // 여기까지만 쓰다가 객체를 사용한다던가, 런타임 예외가 발생했다면? => 객체가 완성되기 전까지 불완전함
+        // multi-thread 환경에서 thread-safe를 보장하지 못함 => locking 이 구현되어야함
+        hani2.setHeight(160);
         hani2.setHome("부산광역시 해운대"); //... setter 쓰기 귀찮아..
 
 

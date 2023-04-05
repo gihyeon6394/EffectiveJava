@@ -5,7 +5,7 @@ package com.effectiveJava.chapter2.item1;
  * ('디자인 패턴'의 정적 팩터리 메서드 (Factory Method)와 다름)
  * <p>
  * 요약 : 정적 팩터리 메서드, public 생성자는 장단점이 있음. 상황에 따라 선택하면 되나 대부분의 경우 정적 팩터리 메서드가 좋을걸?
- * d
+ *
  * <p>
  * 장점
  * 1. 이름을 가질 수 있다.

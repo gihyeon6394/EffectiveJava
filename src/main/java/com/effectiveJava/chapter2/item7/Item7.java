@@ -1,6 +1,7 @@
 package com.effectiveJava.chapter2.item7;
 
 import java.lang.ref.WeakReference;
+import java.util.WeakHashMap;
 
 /**
  * 다 쓴 객체 참조를 해제하라
@@ -12,7 +13,7 @@ import java.lang.ref.WeakReference;
  * null로 참조 지워서 GC 대상에 포함시키자. {@link Stack}
  * 주의점 : 다쓴 객체를 null 처리하는 건 예외적인 경우다. 변수의 범위 (scope)을 최소로 잡았다면 GC는 당연히 잘 이루어짐 (TODO.57)
  * - 캐시
- * {@link java.util.WeakHashMap} 사용 (TODO.WeakHashMap : https://www.baeldung.com/java-weakhashmap)
+ * {@link java.util.WeakHashMap} 사용 (TODO.WeakHashMap guide : https://www.baeldung.com/java-weakhashmap)
  * 단, WeakHashMap은 이런 목적에서만 유용함
  * <p>
  * - 리스너, 콜백 => weak reference (약한 참조) 사용해서 GC 대상자에 포함시키기
@@ -28,8 +29,8 @@ public class Item7 {
         WeakReference<Object> weakReference = new WeakReference<>(object);
 
         object = null; // object에 null 할당 (GC target)
-        System.gc(); // 가비지 컬렉션 실행
-        Thread.sleep(1000); // 잠시 대기
+
+        gc();
 
         if (weakReference.get() == null) {
             System.out.println("객체가 GC 대상이어서 지워졌습니다.");
@@ -37,6 +38,23 @@ public class Item7 {
             System.out.println("객체가 GC 대상이 아니라 여전히 살아있습니다.");
         }
 
+        Integer gcTarget = 1;
+        WeakHashMap<Integer, String> weakHashMap = new WeakHashMap<>();
+        weakHashMap.put(gcTarget, "나 이거 지울래!");
+
+        gcTarget = null;
+        gc();
+        if (gcTarget == null) {
+            System.out.println("객체가 GC 대상이어서 지워졌습니다.");
+        } else {
+            System.out.println("객체가 GC 대상이 아니라 여전히 살아있습니다.");
+        }
+
+    }
+
+    public static void gc() throws InterruptedException {
+        System.gc(); // 가비지 컬렉션 실행
+        Thread.sleep(1000); // 잠시 대기
     }
 
 

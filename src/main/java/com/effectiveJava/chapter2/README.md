@@ -41,7 +41,7 @@
 
 
 - item 9. _tyr-finally 보다는 try-with-resources를 사용하라_  
-  &#58;   
+  &#58; 코드가 깔끔해지고, Suppressed (중첩 예외) 가능
 
 
 

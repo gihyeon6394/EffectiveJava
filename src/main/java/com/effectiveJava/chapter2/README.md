@@ -35,7 +35,14 @@
 
 
 - item 7. _다 쓴 객체 참조를 해제하라_  
-  &#58; memory leak, 다 썼으면 GC target으로 만들어라 
+  &#58; memory leak, 다 썼으면 GC target으로 만들어라
+
+
+- item 8. _finalizer와 cleaner 사용을 피하라_  
+  &#58; 자원 반납이 필요한 객체는 AutoCloseable을 구현하면 됨. 그래도 불안하면 Cleaner를 사용하는데, 불완전함  
+
+
+
 
 
 

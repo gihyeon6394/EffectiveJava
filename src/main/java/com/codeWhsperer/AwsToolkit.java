@@ -55,5 +55,26 @@ public class AwsToolkit {
         }
     }
 
+    // 파라미터가 널인지 확인하는 메서드
+    public static void checkNull(Object o) {
+        if (o == null) {
+            throw new NullPointerException();
+        }
+    }
+
+    // 파라미터가 널일 때 메서드가 망했어요... 출력하는 메서드
+    public static void printNull() {
+
+        //여기서 좀 헤매네
+        System.out.println("메서드가 ");
+    }
+
+    // when parameter is null then print "shit, parameter is null!!"
+    public static void printWhenParmIsNull(String param){
+        // 이것도 그닥이네
+        System.out.println("shit, parameter is null!!");
+    }
+
+
 
 }

@@ -47,5 +47,10 @@ public class Item1 {
         System.out.println(userSingleTone1.toString());
         System.out.println(userSingleTone2.toString());
         System.out.println(userSingleTone1.equals(userSingleTone2));
+
+        // check user1 equals user 4 with equals
+        System.out.println(user1.equals(user4));
+        // check user1 equals user 4 with hashcode
+        System.out.println(user1.hashCode() == user4.hashCode());
     }
 }

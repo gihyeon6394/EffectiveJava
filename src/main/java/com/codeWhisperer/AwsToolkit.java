@@ -1,4 +1,4 @@
-package com.codeWhsperer;
+package com.codeWhisperer;
 
 import org.junit.Test;
 

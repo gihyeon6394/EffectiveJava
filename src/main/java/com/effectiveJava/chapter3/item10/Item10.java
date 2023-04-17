@@ -8,7 +8,7 @@ import java.util.Objects;
  * equals 를 잘못 재정의 하면 잘못된 결과를 초래.
  * 잘못할 거 같으면 애초에 재정의하지 않는 것이 낫다.
  * equals는 재정의 하지 않으면 오직 자기 자신과만 같다.
- * 즉 equals()의 default는 identity 비교이다.
+ * 즉 equals default는 identity 비교이다.
  */
 
 
@@ -31,7 +31,7 @@ public class Item10 {
  * -  identity 말고 equality를 비교해야할때 (&& 상위클래스가 재정의 하지 않았을 때)
  * - 주로 값 클래스 (불변 말고)
  * - ex. {@link Integer}, {@link String}
- *장점
+ * 장점
  * -프로그래머가 논리적 비교 (euqality)가 가능해짐
  * - {@link java.util.Set}, {@link java.util.Map}의 원소로 사용 (정상적으로)
  *
@@ -48,7 +48,7 @@ public class Item10 {
      * null이 아닌 모든 참조값 x, y에 대해
      * x,euqals(y)가 true이면 -> y.eqauls(x)도 true 이다.
      * <p>
-     * 3. trasitivity (추이성)
+     * 3. trasitivity (추이성) : 1과 2가 같고, 2와 3이 같으면 1과 3이 같다.
      * null이 아닌 모든 참조값 x, y, z에 대해
      * x.equals(y)가 true && y.equals(z)가 true이면 -> x.equals(z)도 true이다.
      * <p>
@@ -84,7 +84,33 @@ public class Item10 {
         System.out.println(hani1.equals(caseSensitive2)); // false
         System.out.println(caseSensitive3.equals(caseSensitive2)); // true
         System.out.println(caseSensitive2.equals(caseSensitive3)); // true
+        System.out.println("==========");
 
+        Point p1 = new Point(1, 9);
+        PointWithName1 pointWithName1 = new PointWithName1(1, 9, "newJeans");
+        System.out.println(p1.equals(pointWithName1)); // true
+        System.out.println(pointWithName1.equals(p1)); // false 대치성 위배!
+
+        System.out.println("==========");
+        Point p2 = new Point(1, 9);
+        PointWithName2 pointWithName2 = new PointWithName2(1, 9, "newJeans");
+        System.out.println(p2.equals(pointWithName1)); // true
+        System.out.println(pointWithName2.equals(p2)); // true 대치성은 지킴
+
+        PointWithName2 pointWithName3 = new PointWithName2(1, 9, "IVE");
+        // 추이성 test
+        System.out.println(pointWithName2.equals(p2)); // true
+        System.out.println(p2.equals(pointWithName3)); // true
+        System.out.println(pointWithName2.equals(pointWithName3)); // false 추이성 위배!
+
+        System.out.println("==========");
+
+        PointWithName4 pname1 = new PointWithName4("newJeans", new Point(1, 9));
+        PointWithName4 pname2 = new PointWithName4("newJeans", new Point(1, 9));
+        PointWithName4 pname3 = new PointWithName4("newJeans", new Point(1, 9));
+        System.out.println(pname1.equals(pname2)); //true
+        System.out.println(pname2.equals(pname3)); //true
+        System.out.println(pname1.equals(pname3)); //true
 
     }
 
@@ -127,6 +153,112 @@ public class Item10 {
     }
 
 
+    /**
+     * trasitivity 오류 예제
+     * 의도 : 구현클래스를 확장해서 부모 자식간에 equals가 성립 가능하게 재정의 가능할까?
+     * 원인
+     * - 객체지향 언어의 문제점
+     * - 구현 클래스를 확장시켜 equals를 만족스럽게 재정의하는 방법 존재하지 앟음
+     * - TODO. 리스코프 치환 원칙?
+     * solution
+     * - 상속 대신 컴포지션을 사용하라
+     *
+     * 참고
+     * - JAVA API 에도 구체 클래스에서 equals 재정의한 거 있음. 대치성 위배
+     * - ex. {@link java.sql.Timestamp}
+     * - 그래서 API 명세에 주의해두었고, 엉뚱하게 동작함.
+     */
+
+    public static class Point {
+        private final int x;
+        private final int y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Point)) {
+                return false;
+            } else {
+                Point p = (Point) o;
+                return p.x == x && p.y == y;
+            }
+        }
+    }
+
+    public static class PointWithName1 extends Point {
+        private final String name;
+
+        public PointWithName1(int x, int y, String name) {
+            super(x, y);
+            this.name = name;
+        }
+
+        //equals를 재정의 하지 않으면 name은 무시한채 비교함!
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof PointWithName1)) {
+                return false;
+            } else {
+                return super.equals(o) && ((PointWithName1) o).name.equals(name);
+            }
+        }
+    }
+
+
+    //name을 무시하고 좌표로만 비교하는 건?
+    public static class PointWithName2 extends Point {
+        private final String name;
+
+        public PointWithName2(int x, int y, String name) {
+            super(x, y);
+            this.name = name;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Point)) {
+                return false;
+            }
+            // Point면 이름 무시
+            if (!(o instanceof PointWithName2)) {
+                return o.equals(this);
+            }
+            return super.equals(o) && ((PointWithName2) o).name.equals(name);
+
+        }
+    }
+
+    public static class PointWithName4 {
+
+        private final String name;
+        private final Point point;
+
+        public PointWithName4(String name, Point point) {
+            this.name = name;
+            this.point = Objects.requireNonNull(point);
+        }
+
+        //view: return Point
+        public Point asPoint() {
+            return point;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof PointWithName4)) {
+                return false;
+            } else {
+                PointWithName4 pointWithName4 = (PointWithName4) o;
+                return pointWithName4.name.equals(((PointWithName4) o).name) && pointWithName4.point.equals(((PointWithName4) o).point);
+            }
+
+        }
+
+    }
 
 
     /**

@@ -1,4 +1,4 @@
-package com.memory.codeWhsperer;
+package com.codeWhsperer;
 
 import org.junit.Test;
 

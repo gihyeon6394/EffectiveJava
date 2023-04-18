@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * eqauls 는 일반 규약을 지켜 재정의하라
- * :
+ * : 필수로 정의해야하는 건 아님, 근데 규약을 지켜서 정의할 것
  * equals 를 잘못 재정의 하면 잘못된 결과를 초래.
  * 잘못할 거 같으면 애초에 재정의하지 않는 것이 낫다.
  * equals는 재정의 하지 않으면 오직 자기 자신과만 같다.
@@ -20,10 +20,11 @@ public class Item10 {
  * ex. Thread
  * 2. logical equality를 검사할 일이 없을 때
  * - 클라이언트가 객체의 논리적 동치성을 검사할 일이 없는 클래스
- * 3. 상위 클래스의 equals가 하위 클래스에도 적절
+ * 3. 상위 클래스의 equals가 하위 클래스에도 적절하게 사용가능하게 정의되어 있을 때
  * ex. {@link java.util.Set}, {@link java.util.List}, {@link java.util.Map}
  * 4. class가 private이거나 packaget private이고, equals() 호출을 강제로 막고 싶을 때
  * 5. 불변 클래스이며 factory method를 사용한 객체 (인스턴스가 하나뿐이기 떄문)
+ *  ex. Enum
  * */
 
 /**
@@ -54,7 +55,7 @@ public class Item10 {
      * <p>
      * 4. consitency (일관성)
      * null이 아닌 모든 참조값 x, y에 대해
-     * x.equals(y)를 반복해서 호춯하면 항상 true를 반환하거나 false를 반환해야한다.
+     * x.equals(y)를 반복해서 호출하면 항상 true를 반환하거나 false를 반환해야한다.
      * <p>
      * 5. null-아님
      * null이 아닌 모든 참조 값 x에 대해
@@ -159,10 +160,11 @@ public class Item10 {
      * 원인
      * - 객체지향 언어의 문제점
      * - 구현 클래스를 확장시켜 equals를 만족스럽게 재정의하는 방법 존재하지 앟음
+     * - 확장 클래스면 확장 field가 있을텐데, 확장 필드를 포함해서 추이성을 지키게 불가능
      * - TODO. 리스코프 치환 원칙?
      * solution
      * - 상속 대신 컴포지션을 사용하라
-     *
+     * <p>
      * 참고
      * - JAVA API 에도 구체 클래스에서 equals 재정의한 거 있음. 대치성 위배
      * - ex. {@link java.sql.Timestamp}
@@ -260,6 +262,38 @@ public class Item10 {
 
     }
 
+    /**
+     * 일관성 (consitency)
+     * 두 객체가 같다면 어느하나라도 수정되지 않는 한 앞으로도 영원히 같아야함
+     * 가변객체는 비교시점에 따라 다를 수 있음
+     * 불변객체는 한번 다르면 계속 달라야함
+     * 따라서 일관성의 면에서라도 클래스 작성 시 불변 클래스로 만들어야할 지 심사숙고할 것
+     *  => 불변클래스로 만들기로 했다면 한번 같다면 영원히 같도록, 즉 일관성을 지키도록 만들어야함
+     *
+     * equals 안에 신뢰할 수 없는 자원이 끼어들게하지마라
+     * ex. {@link java.net.URL} : 주어진 URL과 매핑된 호스트 IP 주소를 가지고 비교함. 따라서 가끔 문제를 일으킴!
+     * equals는 메모리에 존재하는 객체만을 사용해 deterministic (결정적) 계산만 할 것.
+     * */
+
+    /**
+     * null-아님
+     * null이 아닌 모든객체는 null과 같지 않다
+     * o.euqals(null)이 true를 던지지 않더라도, {@link NullPointerException}을 던지는데 이것도 안됨. (instanceof 쓰면 되니까)
+     */
+
+    public class foo {
+
+        //instanceof 연산자를 활용한 null 체크
+        @Override
+        public boolean equals(Object o) {
+            // null이면 여기서 false return함
+            if (!(o instanceof foo)) {
+                return false;
+            }
+            return this == o;
+        }
+    }
+
 
     /**
      * equals() 호출을 막는다.
@@ -269,4 +303,24 @@ public class Item10 {
         throw new AssertionError();
     }
 
+
+    /**
+     * equals 를 재정의 잘하는 법 (순서)
+     * 1. == 을 이용해 자기 자신인지 체크. (제일 처음 활용하면 성능 up)
+     * 2. instanceof 로 타입 체크 : 일반적으로 자기 타입과 비교하지만, 가끔 구현 인터페이스와 비교하기도 함
+     * 3. 형변환 : instanceof 이후라 100% 성공
+     * 4. '핵심' 필드 모두 일치 여부 검사: 단하나라도 다르면 False
+     * 기본 필드는 모두 == 로 검사 (float, double 제외)
+     * 참조타입은 equals로 검사
+     *
+     * 필드가 null인게 정상인 경우가 있는데 이떄는 Objects.equals(Object, Object)로 NullPointerException 예방
+     * 비교 비용이 싼 필드부터 먼저 비교하면 equals 성능이 좋아짐
+     *
+     * 주의사항
+     * - hashCode도 반드시 재정의 해라 (TODO.11)
+     * - 복잡하게 해결하려고 하지마라. 공격적으로 파고들다가 오히려 문제생김.
+     * - equals()를 오버로딩 하지마라
+     *- 구글 AUtoValue framework 사용하면 작성~테스트 모두 완벽 (강추) (TODO)
+     *
+     * */
 }

@@ -16,7 +16,7 @@ public class Practice2 {
 
         // make String str1, str2 then equals each other
         String str1 = "Hello";
-        String str2 = "Hello";
+        String str2 = "Hello11";
         System.out.println(str1 == str2);
         System.out.println(str1.equals(str2));
         // make String str3, str4 then equals each other

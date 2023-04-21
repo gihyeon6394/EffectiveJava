@@ -38,7 +38,7 @@
 
 
 - item 11. equals를 재정의하려거든 hashCode도 재정의하라   
-  &#58;
+  &#58; euqals로 같은 인스턴스는 hashCode도 같아야함
 
 
 - item 12. toString을 항상 재정의하라   

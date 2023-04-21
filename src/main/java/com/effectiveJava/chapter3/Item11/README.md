@@ -1,4 +1,4 @@
-<h2>item 11. equals를 재정의하려거든 hashCode도 재정의하라</h2>
+<h1>item 11. equals를 재정의하려거든 hashCode도 재정의하라</h1>
 
 eqals를 재정의한 클래스 모두에서 hashCode도 재정의할 것  
 안그러면 HashMap, HashSet 같은 컬렉션 원소에서 문제 발생  
@@ -6,7 +6,7 @@ ex. HashMap 은 동치성 <sup>logical equality</sup> 비교 시 hashCode가 다
 AutoValue 프레임워크를 사용하면 자동으로 만들어주니까 걱정 말 것
 
 
-<h4>hashCode 생성 규칙을 API 사용자에게 자세하게 알려주지 마라</h4>
+<h2>hashCode 생성 규칙을 API 사용자에게 자세하게 알려주지 마라</h2>
 - 클라이언트가 값에 의지할 수 없음
 - 클라이언트가 계산 방식을 바꿀 위험도 있음
 - String, Integer 같은 클래스가 오픈했고, 실수였음
@@ -28,13 +28,13 @@ map.put(new PhoneNumber1("SK", "01012345678"), "Kim");
 System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
 ~~~~
 
-<h3>hashCode override 방법</h3>
+<h2>hashCode override 방법</h2>
 
 - 직접 재정의 하는 법 <sup>전형적인 방법</sup>
 - com.google.common.hash.Hashing <sup>hash 충돌이 상대적으로 낮음</sup>
 - Object 클래스의 hash **(성능이 별로임)**
 
-<h4>직접 재정의 하는 법</h4>
+<h3>직접 재정의 하는 법</h3>
 
 1. 반환할 hashCode int 변수 result 초기화
    - 초기화 첫번쨰 핵심필드를 가지고 2-1 방법 수행
@@ -63,7 +63,7 @@ public int hashCode() {
 ~~~~
 
 
-<h4>Object 클래스의 hash</h4>
+<h3>Object 클래스의 hash</h3>
 
 ~~~~
 @Override
@@ -72,7 +72,7 @@ public int hashCode() {
 }
 ~~~~
 
-<h3>hashCode의 지연 초기화 <sup>lazy initialization</sup></h3>
+<h2>hashCode의 지연 초기화 <sup>lazy initialization</sup></h2>
 
 - 클래스가 불변
 - 해시코드 계산 비용이 큼

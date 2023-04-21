@@ -35,8 +35,10 @@ System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$Ph
 
 ~~~~
 /**
- * 객체의 통신사 (telecom)와 전화번호 (phoneNumber)를 문자열로 제공한다
- */
+* 객체의 통신사 (telecom)와 전화번호 (phoneNumber)를 문자열로 제공한다
+* @return 예시
+* PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
+*/
 @Override
 public String toString() {
     return "PhoneNumber2{" +

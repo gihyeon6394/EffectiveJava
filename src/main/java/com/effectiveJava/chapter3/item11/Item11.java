@@ -1,4 +1,4 @@
-package com.effectiveJava.chapter3.Item11;
+package com.effectiveJava.chapter3.item11;
 
 import java.util.Map;
 import java.util.Objects;

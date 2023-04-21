@@ -62,7 +62,8 @@ public int hashCode() {
 ~~~~
 
 
-<h4>Object 클래스의 hash **(성능이 별로임)**</h4>
+<h4>Object 클래스의 hash</h4>
+
 ~~~~
 @Override
 public int hashCode() {

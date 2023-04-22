@@ -38,7 +38,7 @@ System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
 <h3>직접 재정의 하는 법</h3>
 
 1. 반환할 hashCode int 변수 result 초기화
-   - 초기화 첫번쨰 핵심필드를 가지고 2-1 방법 수행
+   - 초기화 첫번째 핵심필드를 가지고 2-1 방법 수행
 2. 나머지 핵심 필드 f 들에 대해 다음을 수행  
    1. 필드의 hashCode c를 계산
       - 필드가 기본 타입일 때, Type.hashCode(f) <sup>Type은 해당 필드의 박싱 클래스</sup>

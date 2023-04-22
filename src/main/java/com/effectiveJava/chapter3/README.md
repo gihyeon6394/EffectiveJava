@@ -37,11 +37,11 @@
   &#58; _필수로 정의해야하는 건 아님, 근데 **규약**을 지켜서 정의할 것_
 
 
-- item 11. equals를 재정의하려거든 hashCode도 재정의하라   
+- [item 11. equals를 재정의하려거든 hashCode도 재정의하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/Item11)   
   &#58; euqals로 같은 인스턴스는 hashCode도 같아야함
 
 
-- item 12. toString을 항상 재정의하라   
+- [item 12. toString을 항상 재정의하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item12)   
   &#58; 간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환하면 디버깅도 쉽고 프로그래밍도 즐거움
 
 

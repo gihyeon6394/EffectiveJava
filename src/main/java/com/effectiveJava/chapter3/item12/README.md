@@ -30,9 +30,9 @@ System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$Ph
 
 <h2>toStirng 재정의 하는 법</h2>
 
-- 그 객체가 가진 주요 정보 (필드)를 모두 반환한다
-- 반환값의 포맷을 문서화할지 말지 정한다
-- toString의 의도는 최소한 밝힌다
+- 그 객체가 가진 주요 정보<sup>필드</sup> 를 모두 반환한다
+- 반환값의 포맷을 문서화할지 말지 결정
+- toString의 의도를 밝힌다
 
 ~~~~
 /**

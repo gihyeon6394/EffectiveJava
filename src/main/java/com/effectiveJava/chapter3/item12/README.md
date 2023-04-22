@@ -51,7 +51,15 @@ public String toString() {
 
 ~~~~
 PhoneNumber2 phoneNumber2 = new PhoneNumber2("SKT", "010-5678-1234");
-System.out.println(phoneNumber2.toString()); //PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
-System.out.println(phoneNumber2);//PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
-System.out.println(phoneNumber2 + "에 연결할 수 없습니다.");//PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}에 연결할 수 없습니다.
+System.out.println(phoneNumber2.toString()); 
+System.out.println(phoneNumber2);
+System.out.println(phoneNumber2 + "에 연결할 수 없습니다.");
+~~~~
+
+<h4>console</h4>
+
+~~~~
+PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
+PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
+PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}에 연결할 수 없습니다.
 ~~~~

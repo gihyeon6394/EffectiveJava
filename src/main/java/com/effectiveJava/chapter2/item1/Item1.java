@@ -52,5 +52,6 @@ public class Item1 {
         System.out.println(user1.equals(user4));
         // check user1 equals user 4 with hashcode
         System.out.println(user1.hashCode() == user4.hashCode());
+
     }
 }

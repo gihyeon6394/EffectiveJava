@@ -10,7 +10,7 @@
 - **매개변수 커스터마이징이 가능한,** telescoping constructor pattern <sup>점층적 생성자 패턴</sup> 
   - 필드르 1개받는 생성자, 2개받는 생성자, n개 받는 생성자.....
   - 클라이언트 코드 너저분, 가독성 떨어짐
-- **원하는 필드만 값지정이 가능한,** setter 를 이용한 java beans  
+- **원하는 필드만 값 지정이 가능한,** setter 를 이용한 java beans  
   - 객체를 완성하기 까지 여러 setter 를 호출  
   - setter가 끝나기 전까지 consistency <sup>일관성</sup> 으로부터 위험함
   - 따라서 불변 클래스에서 부적합 thread-not-safe    

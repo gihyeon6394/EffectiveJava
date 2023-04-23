@@ -1,6 +1,10 @@
 <h1>item 1. 생성자 대신 정적 팩터리 메서드를 고려하라</h1>
 
-디자인 패턴의 팩터리 Factory Method 와 다름
+
+> 무작정 public 생성자를 쓰지말고,  
+> 정적 팩터리 메서드가 있다는 걸 고려해라
+
+_디자인 패턴의 팩터리 Factory Method 와 다름_
 
 <h3>클래스는 생성자와 별도로 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
 

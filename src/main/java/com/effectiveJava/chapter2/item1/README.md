@@ -2,20 +2,23 @@
 
 디자인 패턴의 팩터리 Factory Method 와 다름
 
-<h3>클래스는 **생성자와 별도로** 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
-> _java.lang.Boolean 객체_
+<h3>클래스는 생성자와 별도로 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
+
+> _java.lang.Boolean_
 > ~~~~
 > public static Boolean valueOf(boolean b) {
 >   return (b ? TRUE : FALSE);
 > }
 > ~~~~
 
+
 <h2>팩터리 메서드 작성 규약</h2>
-- from : 매개변수를 받아 해당 타입의 인스턴스 반환 (형변환)
+
+- from : 매개변수를 받아 해당 타입의 인스턴스 반환 <sup>형변환</sup>
    ~~~~
    Date d = Date.from(instant);
    ~~~~
-- of : 매개변수를 2개 이상 받아 인스턴스 반환  (집계)
+- of : 매개변수를 2개 이상 받아 인스턴스 반환  <sup>집계</sup>
    ~~~~
    Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
    ~~~~
@@ -41,7 +44,7 @@
    ~~~~
 - _"type"_ : get _"Type"_, new _"Type"_ 의 간결한 버전
    ~~~~
-     List<Complaint> litany = Collectorslist(legacyLitany);
+     List<Complaint> litany = Collectors.list(legacyLitany);
    ~~~~
 
 <h2>팩터리 메서드의 장점</h2>
@@ -49,7 +52,7 @@
 1. 메서드의 이름을 가질 수 있음   
    - 메서드가 반환하는 객체를 나타내는 특성를 표현 가능
    - 시그니처가 같은 여러 생성자가 필요하다? -> 정적 팩터리 메서드 여러개 생성
-2. 호출할 때마다 새로운 인스턴스 생성 안해도 됨 **(싱글톤)**    
+2. **싱글톤** : 호출할 때마다 새로운 인스턴스 생성 안해도 됨    
    - 불변 클래스  
      - 캐싱 가능  
      - 인스턴스가 하나임을 보장 가능
@@ -63,6 +66,7 @@
 
     
 <h2>팩터리 메서드의 단점</h2>
+
 1. 정적 팩터리메서드만 있는 클래스는 상속 불가능  
    - 컴포지션 사용을 유도하기에 장점일지도..?  
 2. 가독성 : 프로그래머가 찾기 힘듦

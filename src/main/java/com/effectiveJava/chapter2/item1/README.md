@@ -6,12 +6,12 @@
 
 _디자인 패턴의 팩터리 Factory Method 와 다름_
 
-<h3>클래스는 생성자와 별도로 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
+<h3>생성자 말고도 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
 
 > _java.lang.Boolean_
 > ~~~~
 > public static Boolean valueOf(boolean b) {
->   return (b ? TRUE : FALSE);
+>     return (b ? TRUE : FALSE);
 > }
 > ~~~~
 

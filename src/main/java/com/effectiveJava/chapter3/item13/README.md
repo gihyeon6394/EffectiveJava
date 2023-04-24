@@ -26,9 +26,7 @@ public class PhoneNumber implements Cloneable {
 <h2>Cloneable 이 구린 이유</h2>
 
 - Cloneable 을 구현하는 과정이 번거로움
-    - clone() 이 선언 된 곳이 Cloneable이 아니고, Object
-    - protected
-    - 따라서 Cloneable을 구현하는 것만으로 clone()을 재정의할 수 없음
+    - Cloneable을 구현하는 것만으로 clone()을 재정의할 수 없음
 - 리플랙션 <sup>TODO.65</sup> 사용하면 가능은 함, 100% 성공 보장 X
 - 생성자를 호출하지 않고도 객체를 생성할 수 있게 함
 - 상속 대비가 불가능함
@@ -39,8 +37,7 @@ public class PhoneNumber implements Cloneable {
 - 인스턴스 변수 중 가변객체가 있는 순간 재앙이 시작됨
     1. 가변 객체의 인스턴스 변수를 가진채 clone
     2. 인스턴스 변수 수정
-    3. 다른 객체까지 수정사항 전파
-    4. 재앙 시작
+    3. 다른 객체까지 수정사항 전파 **<sup>재앙 시작</sup>**  
 
 <h3>메서드 하나 없는 Cloneable 인터페이스는 무슨 일을 하나</h3>
 
@@ -55,7 +52,6 @@ public class PhoneNumber implements Cloneable {
 
 <h2>Cloneable 제대로 구현하기</h2>
 
-- 생성자와 같은 효과를 내야함
 - 원본 객체에 아무런 영향 없이
 - 사본객체의 불변성 보장
 

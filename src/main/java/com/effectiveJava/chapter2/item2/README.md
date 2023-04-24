@@ -9,7 +9,7 @@
 
 - **매개변수 커스터마이징이 가능한,** telescoping constructor pattern <sup>점층적 생성자 패턴</sup> 
   - 필드 1개, 2개, n개 받는 생성자.....  
-  - 생성자 overloading...  
+  - 생성자 overloading  
   - 클라이언트 코드 너저분, 가독성 떨어짐
 - **원하는 필드만 값 지정이 가능한,**  java beans의 setter  
   - 객체를 완성하기 까지 여러 setter 를 호출  

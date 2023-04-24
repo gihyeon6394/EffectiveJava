@@ -23,6 +23,14 @@ public class PhoneNumber implements Cloneable{
         this.phoneNumber = phoneNumber;
     }
 
+    public String getTelecom() {
+        return telecom;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

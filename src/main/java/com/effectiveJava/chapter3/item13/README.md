@@ -37,7 +37,10 @@ public class PhoneNumber implements Cloneable {
     - Object를 하위 객체로 형변환하는데, 이런 예외가 던져질 가능성이 아예 없음
     - 즉 런타임 예외로 정의되었어야함
 - 인스턴스 변수 중 가변객체가 있는 순간 재앙이 시작됨
--
+    1. 가변 객체의 인스턴스 변수를 가진채 clone
+    2. 인스턴스 변수 수정
+    3. 다른 객체까지 수정사항 전파
+    4. 재앙 시작
 
 <h3>메서드 하나 없는 Cloneable 인터페이스는 무슨 일을 하나</h3>
 
@@ -49,6 +52,12 @@ public class PhoneNumber implements Cloneable {
 
 
 
+
+<h2>Cloneable 제대로 구현하기</h2>
+
+- 생성자와 같은 효과를 내야함
+- 원본 객체에 아무런 영향 없이
+- 사본객체의 불변성 보장
 
 
 

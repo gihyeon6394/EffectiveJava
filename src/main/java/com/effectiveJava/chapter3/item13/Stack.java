@@ -56,10 +56,36 @@ public class Stack implements Cloneable {
 
     @Override
     public Stack clone() {
-        try {
+        /*try {
             return (Stack) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
+        }*/
+
+        /*try {
+            Stack result = (Stack) super.clone();
+            result.elements = elements.clone(); //배열의 clone() 활용
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }*/
+
+        /** deepCopy를 이용한 clone*/
+        try {
+            Stack result = (Stack) super.clone();
+            PhoneNumber[] elementsCopy = new PhoneNumber[elements.length];
+            for (int i = 0; i < elements.length - 1; i++) {
+                if (elements[i] == null) {
+                    break;
+                }
+                PhoneNumber phoneNumber = (PhoneNumber) elements[i];
+                elementsCopy[i] = new PhoneNumber(phoneNumber.getTelecom(), phoneNumber.getPhoneNumber());
+            }
+
+            result.elements = elementsCopy; //배열의 clone() 활용
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

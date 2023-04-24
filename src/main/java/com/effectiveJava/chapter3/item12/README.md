@@ -1,4 +1,4 @@
-<h1>item 11. toString을 항상 재정의하라</h1>
+<h1>item 12. toString을 항상 재정의하라</h1>
 
 > toString을 재정의한 클래스는 인스턴스를 보기 좋게 읽을 수 있다
 

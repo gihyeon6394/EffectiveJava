@@ -45,8 +45,8 @@
     > 간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환하면 디버깅도 쉽고 프로그래밍도 즐거움
 
 
-- item 13. clone 재정의는 주의해서 진행하라   
-    > 
+- [item 13. clone 재정의는 주의해서 진행하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item13)   
+    > 배열 제외 복사 생성자, 복사 팩터리가 낫다. 널리 사용중이라 사용법<sup>재정의 방법</sup> 은 익히자
 
 
 - item 5. Comparable을 구현할지 고려하라   

@@ -18,6 +18,45 @@ public class Stack implements Cloneable {
         elements = new Object[DEFAULT_INITIAL_CAPACITY];
     }
 
+    /**
+     * 복사 생성자 (deepCopy)
+     */
+    public Stack(Stack stack) {
+
+        size = stack.size;
+        PhoneNumber[] elementsCopy = new PhoneNumber[stack.elements.length];
+        for (int i = 0; i < stack.elements.length - 1; i++) {
+            if (stack.elements[i] == null) {
+                break;
+            }
+            PhoneNumber phoneNumber = (PhoneNumber) stack.elements[i];
+            elementsCopy[i] = new PhoneNumber(phoneNumber.getTelecom(), phoneNumber.getPhoneNumber());
+        }
+
+        elements = elementsCopy;
+    }
+
+    /**
+     * 복사 팩터리
+     */
+
+    public static Stack newInstance(Stack stack) {
+        Stack result = new Stack();
+        result.size = stack.size;
+        PhoneNumber[] elementsCopy = new PhoneNumber[stack.elements.length];
+        for (int i = 0; i < stack.elements.length - 1; i++) {
+            if (stack.elements[i] == null) {
+                break;
+            }
+            PhoneNumber phoneNumber = (PhoneNumber) stack.elements[i];
+            elementsCopy[i] = new PhoneNumber(phoneNumber.getTelecom(), phoneNumber.getPhoneNumber());
+        }
+
+        result.elements = elementsCopy;
+        return result;
+    }
+
+
     public void push(Object element) {
         ensureCapacity();
         elements[size++] = element;
@@ -45,6 +84,7 @@ public class Stack implements Cloneable {
     public void setElements(Object[] elements) {
         this.elements = elements;
     }
+
 
     @Override
     public String toString() {

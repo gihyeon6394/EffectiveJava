@@ -19,7 +19,7 @@
 - **둘을 합친,** builder pattern **(추천)**
 
 
-<h3>Builder Builder?</h3>
+<h3>Builder?</h3>
 
 - 클래스의 내부 클래스
 - 인스턴스화할때 필드를 채워나가는 역할

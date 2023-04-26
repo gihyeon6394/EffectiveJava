@@ -19,7 +19,7 @@
 >- equals(Object) 가 다르다고 판단했어도, hashCode가 다를 필요는 없음. 그러나, **다른 객체 사이에서 다른 hashCode를 반환해야 해시테이블 성능이 좋아짐**
 
 
-<h3>hashCode() override 안했을 경우</h3>
+<h3>hashCode() 재정의 안했을 때 일어나는 일</h3>
 
 ~~~~
 Map<PhoneNumber1, String> map = new java.util.HashMap<>();
@@ -28,13 +28,13 @@ map.put(new PhoneNumber1("SK", "01012345678"), "Kim");
 System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
 ~~~~
 
-<h2>hashCode override 방법</h2>
+<h2>hashCode 재정의 방법</h2>
 
-- 직접 재정의 하는 법 <sup>전형적인 방법</sup>
+- 직접 재정의 <sup>전형적인 방법</sup>
 - com.google.common.hash.Hashing <sup>hash 충돌이 상대적으로 낮음</sup>
-- Object 클래스의 hash **(성능이 별로임)**
+- Object 클래스의 hash **(성능이 별로)**
 
-<h3>직접 재정의 하는 법</h3>
+<h3>직접 재정의</h3>
 
 1. 반환할 hashCode int 변수 result 초기화
    - 초기화 첫번째 핵심필드를 가지고 2-1 방법 수행
@@ -74,8 +74,8 @@ public int hashCode() {
 
 <h2>hashCode의 지연 초기화 <sup>lazy initialization</sup></h2>
 
-- 클래스가 불변
-- 해시코드 계산 비용이 큼
+- 클래스가 불변이고
+- 해시코드 계산 비용이 클 경우 유용
 - 캐싱 전략 : **지연 초기화<sup>lazy initialization</sup>** 활용
 - **주의사항 : 필드를 지연초기화한다면 thead-safe를 반드시 고려**
 

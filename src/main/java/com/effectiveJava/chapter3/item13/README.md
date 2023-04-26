@@ -54,7 +54,7 @@ protected Object clone() throws CloneNotSupportedException {
 }
 ~~~~
 
-<h2>복사 생성자, 복사 팩터리가  이유</h2>
+<h2>복사 생성자, 복사 팩터리가 더 좋은 이유</h2>
 
 - Cloneable의 구린 이유를 모두 커버
 - 인터페이스 타입을 인수로 받을 수 있음

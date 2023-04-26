@@ -20,10 +20,10 @@ System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$Ph
 <h3>toString override의 좋은 점</h3>
 
 - 디버깅이 쉬움 -> 클래스 사용성이 좋아짐
-- 인스턴스는 개발자 의도와 달리 어딘가에서 쓰임
-- 따라서 로깅이 의미없이 찍힐 수 있음
+- 인스턴스는 개발자 의도와 다른 곳에서 쓰임
+- 이 때 로깅이 의미없이 찍힐 수 있음
 
-아래 메시지는 아무 의미가 없음 (디버깅이 힘듬)
+아래 메시지는 디버깅이 힘듬
 
 ~~~~
  System.out.println(phoneNumber1 +"에 연결할 수 없습니다.");
@@ -32,7 +32,7 @@ System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$Ph
 
 <h2>toStirng 재정의 하는 법</h2>
 
-- 그 객체가 가진 주요 정보<sup>필드</sup> 를 모두 반환한다
+- 그 객체가 가진 주요 정보<sup>필드</sup> 를 모두 반환
 - 반환값의 포맷을 문서화할지 말지 결정
 - toString의 의도를 밝힌다
 

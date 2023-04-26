@@ -1,16 +1,15 @@
 <h1>item 11. equals를 재정의하려거든 hashCode도 재정의하라</h1>
 
-eqals를 재정의한 클래스 모두에서 hashCode도 재정의할 것  
-안그러면 HashMap, HashSet 같은 컬렉션 원소에서 문제 발생  
-ex. HashMap 은 동치성 <sup>logical equality</sup> 비교 시 hashCode가 다른 객체끼리 애초에 비교조차 안함  
-AutoValue 프레임워크를 사용하면 자동으로 만들어주니까 걱정 말 것
+> 안그러면 HashMap, HashSet 같은 컬렉션 원소에서 문제 발생  
+> ex. HashMap 은 동치성 <sup>logical equality</sup> 비교 시 hashCode가 다른 객체끼리 애초에 비교조차 안함  
+> AutoValue 프레임워크를 사용하면 자동으로 만들어줌
 
 
 <h2>hashCode 생성 규칙을 API 사용자에게 자세하게 알려주지 마라</h2>
 
 - 클라이언트가 값에 의지할 수 없음
-- 클라이언트가 계산 방식을 바꿀 위험도 있음
-- String, Integer 같은 클래스가 오픈했고, 실수였음
+- 클라이언트가 계산 방식을 바꿀 위험 있음
+- String, Integer 클래스가 오픈했고, 실수였음
 
 <h3>Object docs 발췌</h3>
 

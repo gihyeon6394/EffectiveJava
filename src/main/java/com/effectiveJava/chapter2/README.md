@@ -8,11 +8,11 @@
 
 <h2>contents</h2>
 
-- item 1.생성자 대신 정적 팩터리 메서드를 고려하라  
+- [item 1.생성자 대신 정적 팩터리 메서드를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item1)  
     > 생성자보다 커스터 마이징 (이름, 싱글톤)이 가능한 정적 팩터리 메서드가 좋음 (대부분)
 
 
-- item 2.생성자에 매개변수가 많다면 빌더를 고려하라  
+- [item 2.생성자에 매개변수가 많다면 빌더를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item2)  
     > 매개변수가 4개 이상이라면 빌더를 고려. 4개 미만이어도 결국 많아질 것이기 때문에 애초에 빌더를 적용
 
 

@@ -7,8 +7,9 @@
 
 <h2>싱글턴을 만드는 방법</h2>
 
-- public static final 필드
-- 정적 팩터리 메서드
+- private 생성자
+    - public static final 필드
+    - 정적 팩터리 메서드
 - 열거 타입
 
 <h3>public static final 필드</h3>
@@ -28,10 +29,8 @@ public class Hani {
         }
     }
 
-    // 생성자를 private 으로
     private Hani() throws Exception {
 
-        // null 이 아닌데 객체를 만드려고 한다면 예외를 던짐
         if (INASTANCE != null) {
             throw new Exception("INSTANCE Already!");
         }

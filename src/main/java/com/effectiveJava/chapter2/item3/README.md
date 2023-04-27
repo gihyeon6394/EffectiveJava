@@ -7,9 +7,9 @@
 
 <h2>싱글턴을 만드는 방법</h2>
 
-1. public static final 필드
-2. 정적 팩터리 메서드
-3. 열거 타입
+- public static final 필드
+- 정적 팩터리 메서드
+- 열거 타입
 
 <h3>public static final 필드</h3>
 

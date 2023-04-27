@@ -16,7 +16,7 @@
     > 매개변수가 4개 이상이라면 빌더를 고려. 4개 미만이어도 결국 많아질 것이기 때문에 애초에 빌더를 적용
 
 
-- item 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라  
+- [item 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item3)  
     > 무상태 객체는 싱글톤으로 만들어라. 그리고 싱글톤은 enum이 좋음
 
 

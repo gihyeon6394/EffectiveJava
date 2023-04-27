@@ -21,7 +21,7 @@ public class Hani {
 
     public static final Hani INASTANCE; 
 
-    // // 최초 한번 인스턴스 생성
+    // 최초 한번 인스턴스 생성
     static {
         try {
             INASTANCE = new Hani();

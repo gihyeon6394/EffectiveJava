@@ -10,7 +10,7 @@
 - private 생성자
     - public static final 필드
     - 정적 팩터리 메서드
-- 열거 타입
+- **열거 타입**
 
 <h3>public static final 필드</h3>
 

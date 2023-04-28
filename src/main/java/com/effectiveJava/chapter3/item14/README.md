@@ -20,6 +20,7 @@
 > - 반사성 : 모든 객체가 자기 자신과 같아야 한다. <sup>즉, 크기가 같은 객체끼리는 어떤객체와 비교해도 항상 같아야 함</sup>
 >- 추가 권장사항 <sup>**꼭 지킬 것**</sup>    
 >  - x.compareTo(y) == 0 이면, x.equals(y) == true
+> 
 >       ~~~~
 >       // 안지키면 이렇게 됨
 >       BigDecimal a = new BigDecimal("1.0");
@@ -38,8 +39,9 @@
 >        TreeSet<BigDecimal> treeSet = new TreeSet<>();
 >        treeSet.add(a);
 >        treeSet.add(b);
->        System.out.println(treeSet.toString()); // 1.0
->        ~~~~
+>        System.out.println(treeSet.toString()); // 1.0  
+>   
+>        ~~~~   
 
 - euqals()와 유사
     - 대칭, 추이, 반사성을 요구

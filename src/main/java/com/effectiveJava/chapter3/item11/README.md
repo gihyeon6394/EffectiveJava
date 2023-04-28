@@ -1,6 +1,6 @@
 <h1>item 11. equals를 재정의하려거든 hashCode도 재정의하라</h1>
 
-> 안그러면 HashMap, HashSet 같은 컬렉션 원소에서 문제 발생  
+> Hash를 사용하는 클래스에서 문제가 발생 <sub>ex. HashMap, HashSet 같은 컬렉션 원소</sub>
 > ex. HashMap 은 동치성 <sup>logical equality</sup> 비교 시 hashCode가 다른 객체끼리 애초에 비교조차 안함  
 > AutoValue 프레임워크를 사용하면 자동으로 만들어줌
 

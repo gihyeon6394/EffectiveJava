@@ -17,9 +17,9 @@ public class Item14 {
         s.add("d");
         System.out.println(s);
 
-        // case1();
-        // case2();
-        case3();
+        case1();
+        case2();
+        //case3();
     }
 
     private static void case3() {
@@ -35,7 +35,7 @@ public class Item14 {
 
     /**
      * CaseInSensitive 의 정렬
-     * */
+     */
     private static void case2() {
 
         CaseInSensitive caseInSensitive1 = new CaseInSensitive("b");
@@ -70,13 +70,13 @@ public class Item14 {
         HashSet<BigDecimal> hashSet = new HashSet<>();
         hashSet.add(a);
         hashSet.add(b);
-        System.out.println(hashSet.toString());
+        System.out.println(hashSet.toString()); // 1.0. 1.00
 
         // compareTo()
         TreeSet<BigDecimal> treeSet = new TreeSet<>();
         treeSet.add(a);
         treeSet.add(b);
-        System.out.println(treeSet.toString());
+        System.out.println(treeSet.toString()); // 1.0
     }
 
     public static final class CaseInSensitive implements Comparable<CaseInSensitive> {

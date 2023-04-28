@@ -244,7 +244,11 @@ public class Item10 {
             this.point = Objects.requireNonNull(point);
         }
 
-        //view: return Point
+        /**
+         * view method
+         * : 인스턴스의 인스턴스 변수를 반환하는 메서드
+         * */
+
         public Point asPoint() {
             return point;
         }

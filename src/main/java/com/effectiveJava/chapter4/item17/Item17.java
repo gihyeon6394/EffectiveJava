@@ -17,6 +17,25 @@ public class Item17 {
         ComplexNotFinal complexNotFinal = ComplexNotFinal.valueOf(1, 2);
         ComplexNotFinal complexNotFinal1 = ComplexNotFinal.valueOf(3, 4);
 
+        testMyObj();
+
+    }
+
+    private static void testMyObj() {
+
+        System.out.println(IdolMember.KARINA);
+        System.out.println(IdolMember.MINZI);
+
+        System.out.println(IdolGroup.NEWJEANS);
+        System.out.println(IdolGroup.AESPA);
+
+        IdolMember idolMember = new IdolMember.Builder("윈터").age(2001).isLeader(0).isDebut(1).build();
+        System.out.println(idolMember);
+
+        IdolGroup IVE = IdolGroup.of("아이브", "스타쉽");
+        System.out.println(IVE);
+        System.out.println("소속사를 이동하면 새로운 객체 탄생한다  : " + (IVE != IVE.changeAgency("SM")));
+
 
     }
 

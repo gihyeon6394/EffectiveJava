@@ -17,9 +17,9 @@
 
 <h3>클래스</h3>
 
-- 패키지 외부에서 쓸 일이 없다면 package-private
-- public 은 API 가 되고 하위 호환을 위해 영원히 관리해야함
-- 클래스 안에서만 사용하는 클래스나 인터페이스는 private static 으로 중첩
+- package-private : 패키지 내부에서만 사용  
+- public : API 가 되고 하위 호환을 위해 영원히 관리해야함
+- private static inner class : 클래스 안에서만 사용하는 클래스나 인터페이스
 
 <h3>멤버</h3>
 

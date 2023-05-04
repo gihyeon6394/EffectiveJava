@@ -22,9 +22,9 @@ package com.effectiveJava.chapter2.item8;
  * 사용할만한 곳 (그나마)
  * 1. close()를 호출하지 않을 것을 대비한 안전망 {@link Room}
  * 2. native peer와 연결된 객체 : GC가 존재를 알지 못하기 떄문에
- * - 단 성능 저하를 감닿랄 수 잇고, 네이티브 피어가 중요자원을 가진게 아니라면 고려해볼 것
+ * - 단 성능 저하를 감당할 수 잇고, 네이티브 피어가 중요자원을 가진게 아니라면 고려해볼 것
  * - 그게 아니라면 close()를 통해 자원 반납이 정상적임
- * * native peer : native mehtod를 통해 기능을 위임한 네이티브 객체
+ * * native peer : native method를 통해 기능을 위임한 네이티브 객체
  */
 public class Item8 {
 

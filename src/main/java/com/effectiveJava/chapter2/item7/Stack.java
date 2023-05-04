@@ -36,7 +36,7 @@ public class Stack {
             throw new EmptyStackException();
         }
         Object result = elements[--size];
-        elements[--size] = null; // pop 할 객체는 참조 해제l
+        elements[--size] = null; // pop 할 객체는 참조 해제
         return result;
     }
 

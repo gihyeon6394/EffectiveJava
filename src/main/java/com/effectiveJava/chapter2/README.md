@@ -33,7 +33,7 @@
 
 
 - item 7.다 쓴 객체 참조를 해제하라  
-    > memory leak 방지 다 썼으면 GC target으로 만들어라
+  > 개발자가 메모리 관리를 직접 코드로 해주는 경우는 드무나, 필요한 경우 참조를 해제하여 GC Target으로 만들라
 
 
 - item 8.finalizer와 cleaner 사용을 피하라  

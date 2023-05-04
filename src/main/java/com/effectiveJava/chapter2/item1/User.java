@@ -3,8 +3,8 @@ package com.effectiveJava.chapter2.item1;
 public class User {
 
 
-    // 싱글톤 객체
-    private static User userSingleTone = User.valueOf("팜하니 (싱글톤)", "부산광역시 싱글톤동");
+    // 싱글턴 객체
+    private static User userSingleTone = User.valueOf("팜하니 (싱글턴)", "부산광역시 싱글턴동");
 
     protected String userName;
     protected String home;

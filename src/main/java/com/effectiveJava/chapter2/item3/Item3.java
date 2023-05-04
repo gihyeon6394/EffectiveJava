@@ -2,7 +2,7 @@ package com.effectiveJava.chapter2.item3;
 
 /**
  * private 생성자나 열거 타입으로 싱글턴임을 보증하라
- * : 싱글톤을 만드려면 enum이 대부분의 경우 좋다.
+ * : 싱글턴을 만드려면 enum이 대부분의 경우 좋다.
  *
  * <p>
  * Singletone : 클래스이다. 클래스인데 인스턴스를 오로지 하나만 만들 수 있는 클래스.

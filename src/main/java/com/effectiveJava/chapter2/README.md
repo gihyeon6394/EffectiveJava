@@ -9,7 +9,7 @@
 <h2>contents</h2>
 
 - [item 1.생성자 대신 정적 팩터리 메서드를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item1)  
-    > 생성자보다 커스터 마이징 (이름, 싱글톤)이 가능한 정적 팩터리 메서드가 좋음 (대부분)
+    > 생성자보다 커스터 마이징 (이름, 싱글턴)이 가능한 정적 팩터리 메서드가 좋음 (대부분)
 
 
 - [item 2.생성자에 매개변수가 많다면 빌더를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item2)  
@@ -17,7 +17,7 @@
 
 
 - [item 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item3)  
-    > 무상태 객체는 싱글톤으로 만들어라. 그리고 싱글톤은 enum이 좋음
+    > 무상태 객체는 싱글턴으로 만들어라. 그리고 싱글턴은 enum이 좋음
 
 
 - item 4.인스턴스화를 막으려거든 private 생성자를 사용하라   

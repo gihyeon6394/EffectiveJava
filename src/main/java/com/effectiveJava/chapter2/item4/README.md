@@ -8,8 +8,7 @@
 public class MyUtils {
 
     /**
-     * private 생성자 : 객체화를 못하게 만듦
-     * 단, private 생성자 자체가 어색한 것이므로 주석에 그 목적을 반드시 달아주자.
+     * 정적 클래스이므로 인스턴스화를 막는다
      */
     private MyUtils() {
         throw new AssertionError();
@@ -20,8 +19,8 @@ public class MyUtils {
 <h3>private 생성자 작성 Tip</h3>
 
 - 생성자가 private 인 것이 어색함
-- 생성자에 이유를 주석으로 달아줌
-- 호출 시 예외를 던지도록 해줌
+- 생성자에 이유를 **주석**으로 달아줌
+- 호출 시 8*예외**를 던지도록 해줌
   - 필수는 아니지만 프로그래머가 클래스 작성의도 파악에 용이
 
 <h3>private 생성자의 장점</h3>

@@ -29,7 +29,7 @@
 <h2>finalizer 와 cleaner 의 쓰임새</h2>
 
 - 안전망 : 클라이언트가 자원 반납을 안했을때 나중에라도 해줄 것이라는 **기대를 가지고** 구현
-  - ex. FileInputStream/OutputStream
+  - ex. java.io.FileInputStream/OutputStream
 - 네이티브 피어(네이티브 메서드를 통해 기능을 위임한 객체)와 연결된 객체
   - 자바 객체가 아니어서 GC Target 이 아님
 

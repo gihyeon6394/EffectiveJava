@@ -1,7 +1,7 @@
 <h1>item 8. finalizer와 cleaner 사용을 피하라</h1>
 
 > 중요치 않은 native 자원에 사용하자, 그러나 실행여부와 성능 보장은 안된다  
-> 반납해야하는 자원이 있는 클래스는 Autocloseable 을 구현하면 된다
+> 반납해야하는 자원이 있는 클래스는 AutoCloseable 을 구현하면 된다
 
 <h3>자바의 객체 소멸자</h3>
 
@@ -73,5 +73,5 @@ public class Room implements AutoCloseable {
 
 <h2>인스턴스가 종료해야하는 자원 <sup>파일, 스레드 등</sup>을 다룰 때?</h2>
 
-훌륭한 대안 : **Autocloseable** 구현 _Item9 참고_
+훌륭한 대안 : **AutoCloseable** 구현 _Item9 참고_
 

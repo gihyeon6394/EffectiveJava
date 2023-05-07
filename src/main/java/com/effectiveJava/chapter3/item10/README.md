@@ -173,7 +173,7 @@ public class PointWithName extends Point {
    - 비교 비용이 싼 필드를 먼저 비교 
    - Null 이 정상으로 취급받아야하는 필드라면 Obejct.equals(obj1, obj2)로 **NPE 방지**
 
-<h3>**주의사항**</h3>
+<h3>주의사항</h3>
 
 - 너무 복잡하게 해결하려들지 말 것
   - 필드 간의 동치성 검사에서 종결되는 경우가 많음

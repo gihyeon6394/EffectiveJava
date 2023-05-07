@@ -34,7 +34,8 @@
 <h2>contents</h2>
 
 - item 10. equals는 일반 규약을 지켜 재정의하라   
-    > 필수로 정의해야하는 건 아님, 근데 **규약**을 지켜서 정의할 것
+  > equals 재정의는 필요한 경우에만 재정의 한다. 오히려 잘못 정의하면 안좋은 결과를 초래
+  > 재정의 할때는 일반 규약을 반드시 지킨다
 
 
 - [item 11. equals를 재정의하려거든 hashCode도 재정의하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item11)   

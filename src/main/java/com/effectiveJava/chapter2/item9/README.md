@@ -39,5 +39,5 @@ try (InputStream in = new FileInputStream("filePath");
 
 <h3>선제조건 : 해당 클래스가 AutoCloseable 구현</h3>
 
-- 많은 자바 라이브러리가 이미 구현해뒀음
+- 많은 자바 라이브러리가 이미 구현해두었음
 - 프로그래머는 반납 자원을 다루는 클래스 작성 시 반드시 AutoCloseable 구현할 것

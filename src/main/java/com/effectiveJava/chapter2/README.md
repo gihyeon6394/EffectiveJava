@@ -41,7 +41,8 @@
 
 
 - item 9.tyr-finally 보다는 try-with-resources를 사용하라  
-    > 코드가 깔끔해지고, Suppressed (중첩 예외) 가능
+  > try 절에서 반납할 자원이 있다면 **무조건** try-with-resources 를 사용한다  
+  > 자원 반납 쉽고, 코드 깔끔하고, 로깅 정보도 좋다
 
 
 

@@ -84,7 +84,8 @@ public class Item9 {
 
     public void write2() throws IOException {
 
-        try (InputStream in = new FileInputStream("filePath"); OutputStream out = new FileOutputStream("filePathDestination")) {
+        try (InputStream in = new FileInputStream("filePath");
+             OutputStream out = new FileOutputStream("filePathDestination")) {
             byte[] buf = new byte[100];
             int n;
             while ((n = in.read(buf)) >= 0) {

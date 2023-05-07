@@ -37,7 +37,7 @@
 
 
 - item 8.finalizer와 cleaner 사용을 피하라  
-    > 자원 반납이 필요한 객체는 AutoCloseable 을 구현하면 됨. 그래도 불안하면 Cleaner를 사용하는데, 불완전함
+  > 중요치 않은 native 자원에 사용하자, 그러나 실행여부와 성능 보장은 안된다
 
 
 - item 9.tyr-finally 보다는 try-with-resources를 사용하라  

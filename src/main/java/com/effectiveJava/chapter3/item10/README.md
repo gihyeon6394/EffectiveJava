@@ -154,7 +154,7 @@ public class PointWithName extends Point {
 
 <h5>java.net.URL의 호스트를 포함한 equals</h5>
 
-<img src="img.png"  width="85%"/>
+<img src="img.png"  width="65%"/>
 
 <h3>5. null 아님</h3>
 
@@ -166,7 +166,7 @@ public class PointWithName extends Point {
 <h2>equals를 재정의 하는 방법</h2>
 
 1. == 연산자를 이용해 입력이 자기 자신인지 확인
-  - 성능 최적화
+   - 성능 최적화
 2. instaceof 연산자로 입력이 올바른 타입인지 확인
 3. 입력을 올바른 타입으로 형변환
 4. **핵심** 필드들을 차례대로 비교

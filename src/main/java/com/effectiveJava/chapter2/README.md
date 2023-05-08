@@ -8,39 +8,39 @@
 
 <h2>contents</h2>
 
-- [item 1.생성자 대신 정적 팩터리 메서드를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item1)  
+- [item 1.생성자 대신 정적 팩터리 메서드를 고려하라](item1)  
     > 생성자보다 커스터 마이징 (이름, 싱글턴)이 가능한 정적 팩터리 메서드가 좋음 (대부분)
 
 
-- [item 2.생성자에 매개변수가 많다면 빌더를 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item2)  
+- [item 2.생성자에 매개변수가 많다면 빌더를 고려하라](item2)  
     > 매개변수가 4개 이상이라면 빌더를 고려. 4개 미만이어도 결국 많아질 것이기 때문에 애초에 빌더를 적용
 
 
-- [item 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter2/item3)  
+- [item 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라](item3)  
     > 무상태 객체는 싱글턴으로 만들어라. 그리고 싱글턴은 enum이 좋음
 
 
-- item 4.인스턴스화를 막으려거든 private 생성자를 사용하라   
+- [item 4.인스턴스화를 막으려거든 private 생성자를 사용하라](item4)
    > private 생성자를 이용하면 인스턴스화를 막을 수 있다 <sup>정적 클래스</sup>
 
 
-- item 5.자원을 직접 명시하지 말고 의존 객체 주입을 사용하라  
+- [item 5.자원을 직접 명시하지 말고 의존 객체 주입을 사용하라](item5)
   > 의존 자원에 따라 동작이 달라진다면, 의존 자원을 주입해라
 
 
-- item 6.불필요한 객체 생성을 피하라  
+- [item 6.불필요한 객체 생성을 피하라](item6)
   > 기존 객체를 재사용해도 된다면 재사용을 우선적으로 고려하자
 
 
-- item 7.다 쓴 객체 참조를 해제하라  
+- [item 7.다 쓴 객체 참조를 해제하라](item7)
   > 개발자가 메모리 관리를 직접 코드로 해주는 경우는 드무나, 필요한 경우 참조를 해제하여 GC Target으로 만들라
 
 
-- item 8.finalizer와 cleaner 사용을 피하라  
+- [item 8.finalizer와 cleaner 사용을 피하라](item8)
   > 중요치 않은 native 자원에 사용하자, 그러나 실행여부와 성능 보장은 안된다
 
 
-- item 9.tyr-finally 보다는 try-with-resources를 사용하라  
+- [item 9.tyr-finally 보다는 try-with-resources를 사용하라](item9)
   > try 절에서 반납할 자원이 있다면 **무조건** try-with-resources 를 사용한다  
   > 자원 반납 쉽고, 코드 깔끔하고, 로깅 정보도 좋다
 

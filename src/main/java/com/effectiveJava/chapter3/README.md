@@ -38,18 +38,18 @@
   > 재정의 할때는 일반 규약을 반드시 지킨다
 
 
-- [item 11. equals를 재정의하려거든 hashCode도 재정의하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item11)   
+- [item 11. equals를 재정의하려거든 hashCode도 재정의하라](item11)   
     > euqals() 결과가 같은 인스턴스는 hashCode() 결과도 같아야함
 
 
-- [item 12. toString을 항상 재정의하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item12)   
+- [item 12. toString을 항상 재정의하라](item12)   
     > 간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환하면 디버깅이 쉬움
 
 
-- [item 13. clone 재정의는 주의해서 진행하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item13)   
+- [item 13. clone 재정의는 주의해서 진행하라](item13)   
     > 배열 제외하면 복사 생성자, 복사 팩터리가 낫다. 널리 사용중이라 사용법<sup>재정의 방법</sup> 은 익히자
 
 
-- [item 5. Comparable을 구현할지 고려하라](https://github.com/gihyeon6394/practice-effective-java/tree/main/src/main/java/com/effectiveJava/chapter3/item14)    
+- [item 5. Comparable을 구현할지 고려하라](item14)    
     > 인스턴스의 순서를 고려할 필요가 있을 때 Comparable 인터페이스를 구현
 

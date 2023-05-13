@@ -5,7 +5,7 @@
 
 <h2>상속용 클래스 작성법</h2>
 
-- 재정의 가능 메서드 :  내부적으로 어떻게 이용하는지 <sup>자기사용</sup> 문서화
+- 재정의 가능 메서드 :  내부적으로 어떻게 이용하는지 <sup>ex. 자기사용</sup> 문서화
     - ex. java.util.AbstractCollection 의 interator()를 재정의하면 remove()에 영향을 주는걸 문서화
 - hook 멤버 <sup>클래스 내부동작 중 끼어드는 것</sup>를 잘 선별하여 protected 로 공개
     - ex. java.util.AbstractList 의 removeRange()

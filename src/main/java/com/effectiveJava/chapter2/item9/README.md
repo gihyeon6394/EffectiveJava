@@ -10,28 +10,37 @@
 - 예외가 두번 발생하면 마지막 예외가 첫번째 예외를 삼킴
     - ex. try, finally 두군데에서 발생 시 finally 에서 발생한 예외만 클라이언트가 알 수 있음
 
-~~~~
-InputStream in = new FileInputStream("filePath");
-try {
-    OutputStream out = new FileOutputStream("filePathDestination");
+```java
+public class foo {
+  public static void io() {
+    InputStream in = new FileInputStream("filePath");
     try {
-       ...
-    } finally {
+      OutputStream out = new FileOutputStream("filePathDestination");
+      try {
+        // ...
+      } finally {
         out.close(); // 반납 1
+      }
+    } finally {
+      in.close(); // 반납 2
     }
-} finally {
-    in.close(); // 반납 2
+  }
 }
-~~~~
+```
 
 <h2>try-with-resources 가 좋은 이유</h2>
 
-~~~~
-try (InputStream in = new FileInputStream("filePath");
-  OutputStream out = new FileOutputStream("filePathDestination")) {
-  ...
+```java
+public class foo {
+  public static void io() {
+    try (InputStream in = new FileInputStream("filePath");
+         OutputStream out = new FileOutputStream("filePathDestination")) {
+    // ...
+    }
+  }
 }
-~~~~
+
+```
 
 - 가독성
 - 디버깅이 쉬움

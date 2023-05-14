@@ -4,7 +4,9 @@
 
 <h3>final이 아닌 Object 메서드</h3>
 
-~~~~
+```java
+public class foo{
+    
     @Override
     public int hashCode() {
       return super.hashCode();
@@ -29,7 +31,9 @@
     protected void finalize() throws Throwable {
         super.finalize();
     }
-   ~~~~
+}
+    
+```
 
 <h2>contents</h2>
 

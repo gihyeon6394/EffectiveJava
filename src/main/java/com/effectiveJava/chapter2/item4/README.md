@@ -4,7 +4,7 @@
 
 <h2>private 생성자는 인스턴스화를 막는다</h2>
 
-~~~~
+```java
 public class MyUtils {
 
     /**
@@ -14,7 +14,7 @@ public class MyUtils {
         throw new AssertionError();
     }
 }
-~~~~
+```
 
 <h3>private 생성자 작성 Tip</h3>
 

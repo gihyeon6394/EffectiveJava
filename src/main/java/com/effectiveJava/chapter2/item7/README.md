@@ -4,16 +4,24 @@
 
 <h3>Stack 의 pop 메서드</h3>
 
-~~~~
-public Object pop() {
-    if (size == 0) {
-        throw new EmptyStackException();
+```java
+public class Stack {
+    private Object[] elements;
+    private int size = 0;
+
+    // ...
+    
+    public Object pop() {
+        if (size == 0) {
+            throw new EmptyStackException();
+        }
+        Object result = elements[--size];
+        elements[--size] = null; // pop 할 객체는 참조 해제
+        return result;
     }
-    Object result = elements[--size];
-    elements[--size] = null; // pop 할 객체는 참조 해제
-    return result;
 }
-~~~~
+
+```
 
 <h3>메모리 누수 <sup>memory leak</sup></h3>
 

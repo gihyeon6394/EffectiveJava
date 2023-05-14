@@ -36,36 +36,36 @@
 - 코드가 장황해짐  
 
 
-~~~~
-// Idol 인스턴스 생성 시
-Idol hani4 = new Idol.Builder("팜하니", 21).isLeader(0).isDebut(1).isMarried(0).build();
-...
+``
+```java
+public class foo{
+    public static void main(String[] args) {
+      // Idol 인스턴스 생성 시
+      Idol hani4 = new Idol.Builder("팜하니", 21).isLeader(0).isDebut(1).isMarried(0).build();
+    }
+}
 
 // Idol 클래스
 public class Idol {
 
     private final String memberName;
-    ....
+    private final int age;
     
     public static class Builder {
         private final String memberName;
-        ...
-
-        private String home = "-";      
-        ...
+        private final int age;
+        private int isLeader = 0;
         
         public Builder(String memberName, int age) {
             this.memberName = memberName;
-            ...
+            this.age = age;
         }
 
-        public Builder home(String home) {
-            this.home = home;
+        public Builder isLeader(int isLeader) {
+            this.isLeader = isLeader;
             return this;
         }
         
-        ...
-
         public Idol build(){
             return new Idol(this);
         }
@@ -73,11 +73,10 @@ public class Idol {
 
     public Idol(Builder builder) {
         this.memberName = builder.memberName;
-        ....
     }
 
 }
-~~~~
+```
 
 
 

@@ -54,12 +54,11 @@ _동치관계 : 올바른 equals 는 같은 인스턴스 <sup>집합</sup> 간�
 
 <h4>대칭성 위배 예제 : 한방향으로만 작동</h4>
 
-~~~~
+```java
 
 public class CaseInSensitive {
   private final String s;
-  
-  ...
+  // ...
   
   @Override
   public boolean equals(Object o) {
@@ -73,7 +72,7 @@ public class CaseInSensitive {
   }
 }
 
-~~~~
+```
 
 <h3>3. 추이성<sup>trasitivity</sup></h3>
 
@@ -83,7 +82,7 @@ public class CaseInSensitive {
 
 - ex. java.sql.Timestamp
 
-~~~~
+```java
 public class PointWithName extends Point {
     private final String name; // 확장
 
@@ -101,20 +100,20 @@ public class PointWithName extends Point {
         }
     }
 }
-~~~~
+```
 
 - 객체 지향 언어가 동치 관계에서 가지는 문제점
     - _**새로운 필드를 추가한 구체 클래스와 부모 클래스 간의 equals 규약을 만족시키는 방법은 없다.**_
 - 리스코프 치환 원칙 <sup>Liskov Substitution Principle</sup>
 - 대안 : **상속** 대신 **컴포지션** 사용
-  ~~~~
+  ```java
   public static class PointWithName {
   
-      ...
+      
       private final Point point; // 컴포지션
   
       public PointWithName(String name, Point point) {
-          ...
+          // ...
           this.point = Objects.requireNonNull(point);
       }
   
@@ -138,7 +137,7 @@ public class PointWithName extends Point {
   
       }
   }
-  ~~~~
+    ```
 
 <h3>4. 일관성<sup>consitency</sup></h3>
 

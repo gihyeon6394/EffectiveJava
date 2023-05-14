@@ -16,7 +16,7 @@
 
 - private 생성자는 한번만 호출 됨 <sup>public static final 필드 초기화 시</sup>
 
-~~~~
+```java
 public class Hani {
 
     public static final Hani INASTANCE; 
@@ -37,7 +37,7 @@ public class Hani {
         }
     }
 }
-~~~~
+```
 
 <h3>정적 팩터리 메서드</h3>
 
@@ -48,7 +48,7 @@ public class Hani {
     - 제네릭 싱글턴 팩터리를 만들 수 있음
     - 정적 팩터리의 메서드 참조를 공급자로 사용할 수 있음
 
-~~~~
+```java
 public class Minzi {
     private static final Minzi INASTANCE = new Minzi(); 
 
@@ -61,7 +61,7 @@ public class Minzi {
     }
 }
 
-~~~~
+```
 
 <h3>열거<sup>enum</sup> 타입</h3>
 
@@ -70,8 +70,9 @@ public class Minzi {
 - **대부분의 경우 싱글턴을 구현하는 가장 좋은 방법**
 - 부자연스러움
 
-~~~~
+```java
 public enum Karina {
     INSTANCE;
 }
-~~~~
+```
+

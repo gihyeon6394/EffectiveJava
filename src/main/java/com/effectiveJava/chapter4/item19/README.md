@@ -12,8 +12,8 @@
 - 상속 클래스의 생성자는 직간접적으로 재정의 가능 메서드를 호출하면 안됨
     - 상위 클래스 생성자가 하위 클래스의 재정의 메서드보다 먼저 실행되버림
     - 같은 이유로 Cloneable Serializable 인터페이스를 구현한 클래스는 clone readObject 에서 재정의 가능 메서드를 호출하면 안됨
-        ~~~~
-            static class Super{
+        ```java  
+            public class Super{
                 public Super() {
                     overrideMe();
                 }
@@ -22,7 +22,7 @@
                 }
             }
     
-            static final class Sub extends Super{
+            public final class Sub extends Super{
                 private final String name;
     
                 public Sub(String name) {
@@ -34,7 +34,7 @@
                     System.out.println(name);
                 }
             }
-        ~~~~
+        ```
 - 상속용으로 작성했으면 앞으로 그 결정에 영훤히 책임저야함
 
 <h3>상속 클래스를 올바르게 작성했는지 확인하는 방법</h3>

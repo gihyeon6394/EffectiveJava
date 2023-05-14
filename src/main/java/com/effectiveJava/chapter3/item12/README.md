@@ -11,11 +11,15 @@ _단 상위클래스에서 적절히 재정의 했다면 안해도 된다_
 
 Object의 toString이 적합한 문자열을 반환하는 경우는 거의 없음
 
-~~~~
-PhoneNumber1 phoneNumber1 = new PhoneNumber1("SKT", "010-5678-1234");
-System.out.println(phoneNumber1.toString()); // com.effectiveJava.chapter3.item12.Item12$PhoneNumber1@68c4de73
-System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$PhoneNumber1@68c4de73
-~~~~
+```java
+public class foo{
+    public static void main (String[] args){
+        PhoneNumber1 phoneNumber1 = new PhoneNumber1("SKT", "010-5678-1234");
+        System.out.println(phoneNumber1.toString()); // com.effectiveJava.chapter3.item12.Item12$PhoneNumber1@68c4de73
+        System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$PhoneNumber1@68c4de73
+    }
+}
+```
 
 <h3>toString override의 좋은 점</h3>
 
@@ -36,28 +40,38 @@ System.out.println(phoneNumber1); // com.effectiveJava.chapter3.item12.Item12$Ph
 - 반환값의 포맷을 문서화할지 말지 결정
 - toString의 의도를 밝힌다
 
-~~~~
-/**
-* 객체의 통신사 (telecom)와 전화번호 (phoneNumber)를 문자열로 제공한다
-* @return 예시
-* PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
-*/
-@Override
-public String toString() {
-    return "PhoneNumber2{" +
-            "telecom='" + telecom + '\'' +
-            ", phoneNumber='" + phoneNumber + '\'' +
-            '}';
+```java
+public class PhoneNumber2{
+    private final String telecom;
+    private final String phoneNumber;
+    // ...
+    
+    /**
+     * 객체의 통신사 (telecom)와 전화번호 (phoneNumber)를 문자열로 제공한다
+     * @return 예시
+     * PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
+     */
+    @Override
+    public String toString() {
+        return "PhoneNumber2{" +
+                "telecom='" + telecom + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
+```
 
-~~~~
 
-~~~~
-PhoneNumber2 phoneNumber2 = new PhoneNumber2("SKT", "010-5678-1234");
-System.out.println(phoneNumber2.toString()); 
-System.out.println(phoneNumber2);
-System.out.println(phoneNumber2 + "에 연결할 수 없습니다.");
-~~~~
+```java
+public class foo{
+    public static void main (String[] args){
+        PhoneNumber2 phoneNumber2 = new PhoneNumber2("SKT", "010-5678-1234");
+        System.out.println(phoneNumber2.toString());
+        System.out.println(phoneNumber2);
+        System.out.println(phoneNumber2 + "에 연결할 수 없습니다.");
+    }
+}
+```
 
 <h4>console</h4>
 

@@ -49,7 +49,7 @@
 - 위임 <sup>delegation</sup>
 - 새로운 클래스는 기존 클래스의 내부 구현방식에 의존하지 않음
 
-~~~~
+```java
 // 래퍼 클래스
 public class InstrumentedSet<E> extends ForwardingSet<E> {
     private int addCount = 0;
@@ -97,7 +97,7 @@ class ForwardingSet<E> implements Set<E> {
             s.clear();
         }
     }
-~~~~
+```
 
 <h3>구성요소</h3>
 

@@ -9,11 +9,13 @@ _디자인 패턴의 팩터리 Factory Method 와 다름_
 <h3>생성자 말고도 정적 팩터리 메서드<sup>static factory method</sup>를 제공할 수 있다</h3>
 
 > _java.lang.Boolean_
-> ~~~~
-> public static Boolean valueOf(boolean b) {
->     return (b ? TRUE : FALSE);
+> ```java
+> public class Boolean {
+>    public static Boolean valueOf(boolean b) {
+>        return (b ? TRUE : FALSE);
+>    }
 > }
-> ~~~~
+> ```
 
 
 <h2>팩터리 메서드 작성 규약</h2>

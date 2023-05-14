@@ -6,12 +6,12 @@
 
 <h3>위험한 public class</h3>
 
-~~~~
+```java
 public class Point{
     public double x;
     public double y;
 }
-~~~~
+```
 
 - 내부 표현 수정 시 API를 수정해야함
 - 불변식을 보장할 수 없음
@@ -21,15 +21,19 @@ public class Point{
 
 - package-private, private 중첩 클래스라면 필드를 public으로 두어도 문제 없음
     - 접근자 방식보다 클라이언트 코드도 더 깔끔함
-    ~~~~
-    private static class Foo{
-        public int a;
-        public int b;
+    ```java
+    public class FooOuter{
+        public static void main(String[] args){
+            //client code
+            Foo foo = new Foo();
+            foo.a = 1;
+        }
+        private class Foo{
+            public int a;
+            public int b;
+        }
     }
-    ...
-    Foo foo = new Foo();
-    foo.a = 1;
-    ~~~~
+   ```
 - 필드가 **불변**이라면 public으로 두어도 되지만...
     - API를 변경하지 않고는 표현 방식을 바꿀 수 없고
     - 필드를 수정할 때 부수 작업을 수행할 수 없음

@@ -7,31 +7,40 @@
 - **정적 유틸리티 클래스, 싱글턴 방식은 구리다**
 - 자원 <sup>필드</sup>을 교체하는 메서드는 불완전하다
     - 어색하고, 오류 발생 가능성, thread-not-safe
-~~~~
-    public static void changeConnector(Connector connector){
+
+```java
+    public class ConnectionUtils {
+    public static Connector connector = new Connector();
+
+    public static void changeConnector(Connector connector) {
         ConnectionUtils.connector = connector;
     }
-~~~~
+}
+```
 
 <h3>인스턴스를 사용할 때 <sup>**생성자**</sup> 필요한 자원을 넘겨준다</h3>
 
 - Dependency Injection, DI의 한 형태
-- 생성자, 정적 팩터리, 빌더에 응용 가능
-    ~~~~
-    public ConnectionUtils(Connector connector) {
-        this.connector = connector;
-    }
+    - 생성자, 정적 팩터리, 빌더에 응용 가능
+        ```java
+       public class ConnectionUtils {
+            public static Connector connector = new Connector();
     
-    public valueOf(Connector connector) {
-        this.connector = connector;
-        return this;
-    }
-    
-     public Builder connector(Connector connector) {
-        this.connector = connector;
-        return this;
-     }
-    ~~~~
+            public ConnectionUtils(Connector connector) {
+                this.connector = connector;
+            }
+      
+            public valueOf(Connector connector) {
+                this.connector = connector;
+                return this;
+            }
+      
+           public Builder connector(Connector connector) {
+              this.connector = connector;
+              return this;
+           }
+        }
+        ```
 - 생성자에 자원 팩터리를 넘겨줄 수 있음
     - 팩터리 메서드 패턴
     - 호출할 때마다 다른 타입의 인스턴스 생성 가능

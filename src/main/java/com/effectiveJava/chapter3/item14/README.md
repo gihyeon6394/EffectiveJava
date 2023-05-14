@@ -21,27 +21,31 @@
 > - 추가 권장사항 <sup>**꼭 지킬 것**</sup>    
 >   - x.compareTo(y) == 0 이면, x.equals(y) == true
 > 
->       ~~~~
->       // 안지키면 이렇게 됨
->       BigDecimal a = new BigDecimal("1.0");
->       BigDecimal b = new BigDecimal("1.00");
+>       ```java
+>     public class foo {
+>           public static void main(String[] args) {
+>               // 안지키면 이렇게 됨
+>               BigDecimal a = new BigDecimal("1.0");
+>               BigDecimal b = new BigDecimal("1.00");
 >
->       System.out.println(a.equals(b)); // false
->       System.out.println(a.compareTo(b)); // true(0)
+>               System.out.println(a.equals(b)); // false
+>               System.out.println(a.compareTo(b)); // true(0)
 >      
->        // equals()
->        HashSet<BigDecimal> hashSet = new HashSet<>();
->        hashSet.add(a);
->        hashSet.add(b);
->        System.out.println(hashSet.toString()); // 1.0. 1.00
+>                // equals()
+>                HashSet<BigDecimal> hashSet = new HashSet<>();
+>                hashSet.add(a);
+>                hashSet.add(b);
+>                System.out.println(hashSet.toString()); // 1.0. 1.00
 >     
->        // compareTo()
->        TreeSet<BigDecimal> treeSet = new TreeSet<>();
->        treeSet.add(a);
->        treeSet.add(b);
->        System.out.println(treeSet.toString()); // 1.0  
+>                // compareTo()
+>                TreeSet<BigDecimal> treeSet = new TreeSet<>();
+>                treeSet.add(a);
+>                treeSet.add(b);
+>                System.out.println(treeSet.toString()); // 1.0  
+>           } 
+>     }
 >   
->        ~~~~   
+>        ```  
 
 <h3>comapreTo는 euqals와 유사하다</h3>
 
@@ -65,18 +69,22 @@
 - 대신, static compare 메서드나 Comparator 의비교자 생성 메서드 사용
 
 
-~~~~
-@Override
-public int compareTo(PhoneNumber o) {
-    int result = this.telecom.compareTo(o.telecom);
-    
-    // 핵심필드에서 판명나지 않은 경우에만 나머지 필드 비교
-    if (result == 0) {
-        result = this.phoneNumber.compareTo(o.phoneNumber);
+```java
+public class PhoneNumber implements Comparable{
+    // ...
+
+    @Override
+    public int compareTo(PhoneNumber o) {
+        int result = this.telecom.compareTo(o.telecom);
+
+        // 핵심필드에서 판명나지 않은 경우에만 나머지 필드 비교
+        if (result == 0) {
+            result = this.phoneNumber.compareTo(o.phoneNumber);
+        }
+        return result;
     }
-    return result;
 }
-~~~~
+```
 
 
 <h4>비교자 생성 메서드</h4>
@@ -84,8 +92,11 @@ public int compareTo(PhoneNumber o) {
 - 단점 : 성능 저하
 - 장점 : 간결함, 메서드연쇄 방식을 통한 비교자 생성
 
-~~~~
-public static final Comparator<PhoneNumber> COMPARATOR = Comparator.comparing(PhoneNumber::getTelecom)
-        .thenComparing(PhoneNumber::getPhoneNumber);
-~~~~
+```java
+public class PhoneNumber implements Comparable{
+    public static final Comparator<PhoneNumber> COMPARATOR = Comparator.comparing(PhoneNumber::getTelecom)
+            .thenComparing(PhoneNumber::getPhoneNumber);
+    // ...
+}
+```
 

@@ -33,13 +33,13 @@
 - 네이티브 피어(네이티브 메서드를 통해 기능을 위임한 객체)와 연결된 객체
   - 자바 객체가 아니어서 GC Target 이 아님
 
-~~~~
+```java
 public class Room implements AutoCloseable {
     private static final Cleaner cleaner = Cleaner.create(); //내부 클래스 State를 등록해서 안전망 cleaner로 사용
 
     private static class State implements Runnable {
         
-        ...
+        // ...
 
         /**
          * run()이 사용되는 시점
@@ -68,9 +68,7 @@ public class Room implements AutoCloseable {
         cleanable.clean();
     }
 }
-
-~~~~
-
+```
 <h2>인스턴스가 종료해야하는 자원 <sup>파일, 스레드 등</sup>을 다룰 때?</h2>
 
 훌륭한 대안 : **AutoCloseable** 구현 _Item9 참고_

@@ -21,12 +21,16 @@
 
 <h3>hashCode() 재정의 안했을 때 일어나는 일</h3>
 
-~~~~
-Map<PhoneNumber1, String> map = new java.util.HashMap<>();
-map.put(new PhoneNumber1("SK", "01012345678"), "Kim");
+```java
+public class foo {
+    public static void main(String[] args) {
+        Map<PhoneNumber1, String> map = new java.util.HashMap<>();
+        map.put(new PhoneNumber1("SK", "01012345678"), "Kim");
 
-System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
-~~~~
+        System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
+    }
+}
+```
 
 <h2>hashCode 재정의 방법</h2>
 
@@ -53,24 +57,32 @@ System.out.println(map.get(new PhoneNumber1("SK", "01012345678"))); //null
 * 파생 필드는 해시코드 계산 시 제외해도 됨
 * **equals()에서 사용되지 않는 필드는 반드시 제외**
 
-~~~~
-@Override
-public int hashCode() {
-    int result = telecom != null ? telecom.hashCode() : 0;
-    result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
-    return result;
+```java
+public class foo{
+    // ...
+    
+    @Override
+    public int hashCode() {
+        int result = telecom != null ? telecom.hashCode() : 0;
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        return result;
+    }
 }
-~~~~
+```
 
 
 <h3>Object 클래스의 hash</h3>
 
-~~~~
-@Override
-public int hashCode() {
-    return Objects.hash(telecom, phoneNumber);
+```java
+public class foo{
+    // ...
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(telecom, phoneNumber);
+    }
 }
-~~~~
+```
 
 <h2>hashCode의 지연 초기화 <sup>lazy initialization</sup></h2>
 
@@ -80,21 +92,23 @@ public int hashCode() {
 - **주의사항 : 필드를 지연초기화한다면 thead-safe를 반드시 고려**
 
 
-~~~~
-....
-private int hashCode;
-....
-
-@Override
-public int hashCode() {
-    int result = hashCode;
+```java
+public class foo{
     
-    // hashCode가 정의된적이 없을 때만 초기화
-    if (result == 0) {
-        result = telecom != null ? telecom.hashCode() : 0;
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+    private int hashCode;
+    // ...
+    
+    @Override
+    public int hashCode() {
+        int result = hashCode;
+        
+        // hashCode가 정의된적이 없을 때만 초기화
+        if (result == 0) {
+            result = telecom != null ? telecom.hashCode() : 0;
+            result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        }
+        
+        return result;
     }
-    
-    return result;
 }
-~~~~
+```

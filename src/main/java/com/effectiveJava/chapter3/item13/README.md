@@ -6,22 +6,21 @@
 > 단, 배열은 clone() 이 적합함  
 > Cloneable이 안좋지만, 널리 쓰이고 있어서 사용법은 알아야함
 
-~~~~
+```java
 public class PhoneNumber implements Cloneable {
 
-...
+    // ...
 
-      @Override
-      public PhoneNumber clone() {
-          try {
-              return (PhoneNumber) super.clone();
-          } catch (CloneNotSupportedException e) {
-              throw new AssertionError();
-          }
+    @Override
+    public PhoneNumber clone() {
+      try {
+          return (PhoneNumber) super.clone();
+      } catch (CloneNotSupportedException e) {
+          throw new AssertionError();
       }
-  }
-
-~~~~
+    }
+}
+```
 
 <h2>Cloneable 이 구린 이유</h2>
 
@@ -47,29 +46,37 @@ public class PhoneNumber implements Cloneable {
 
 <h3>자식의 clone() 재정의를 막는 법</h3>
 
-~~~~
-@Override
-protected Object clone() throws CloneNotSupportedException {
-    throw new CloneNotSupportedException();
+
+```java
+public class PhoneNumber implements Cloneable {
+    // ...
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException();
+    }
 }
-~~~~
+
+```
 
 <h2>복사 생성자, 복사 팩터리가 더 좋은 이유</h2>
 
 - Cloneable의 구린 이유를 모두 커버
 - 인터페이스 타입을 인수로 받을 수 있음
 
-~~~~
-public Stack(Stack stack) {
-  .... (copy)
-}
+```java
+public class Stack implements Cloneable {
+    public Stack(Stack stack) {
+        // .... (copy)
+    }
 
-public static Stack newInstance(Stack stack) {
-    Stack result = new Stack();
-    .... (copy)
-    return result;
+    public static Stack newInstance(Stack stack) {
+        Stack result = new Stack();
+        // .... (copy)
+        return result;
+    }
 }
-~~~~
+```
 
 <h2>Cloneable 제대로 구현하기</h2>
 
@@ -84,13 +91,17 @@ public static Stack newInstance(Stack stack) {
 - 이미 Cloneable을 구현한 클래스를 확장할 경우
 - 배열의 복사
 
-~~~~
-int[] arr = {1, 2, 3};
-int[] arr2 = arr.clone();
+```java
+public class foo{
+    public static copyArray(int[] arr){
+        int[] arr2 = arr.clone();
 
-System.out.println(arr == arr2); // false
-System.out.println(arr.equals(arr2)); // false
-~~~~
+        System.out.println(arr == arr2); // false
+        System.out.println(arr.equals(arr2)); // false
+    }
+} 
+
+```
 
 <h3>메서드 하나 없는 Cloneable 인터페이스는 무슨 일을 하나</h3>
 

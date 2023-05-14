@@ -46,13 +46,13 @@
 <h4>한번 만든 인스턴스는 최대한 재활용 하라</h4>
 
 - public static final 상수로 제공
-  ~~~~
+  ```java
   public final class Complex {
-    public static final Complex ZERO = new Complex(0, 0);
-    public static final Complex ONE = new Complex(1, 0);
-    public static final Complex I = new Complex(0, 1);
+      public static final Complex ZERO = new Complex(0, 0);
+      public static final Complex ONE = new Complex(1, 0);
+      public static final Complex I = new Complex(0, 1);
   }
-  ~~~~
+  ```
 
 <h4>복사 생성자는 필요 없다</h4>
 

@@ -75,8 +75,8 @@ public class foo{
 
 <h4>console</h4>
 
-~~~~
+```console
 PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
 PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}
 PhoneNumber2{telecom='SKT', phoneNumber='010-5678-1234'}에 연결할 수 없습니다.
-~~~~
+```

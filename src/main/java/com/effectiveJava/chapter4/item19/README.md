@@ -50,7 +50,7 @@
 
 <h3>상속을 금지시키는 방법</h3>
 
-- 클래스를 final로 선언 (더 쉬움)
-- 생성자 모두 private 혹은 package-private 으로 선언
+- 클래스를 final로 선언 <sup>더 쉬움</sup>
+- 생성자를 private 혹은 package-private 으로 선언
     - 그리고 public 정적 팩터리를 만들어 제공
 

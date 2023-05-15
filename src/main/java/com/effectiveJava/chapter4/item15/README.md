@@ -36,17 +36,17 @@
 - **public** static final 배열 필드를 두거나 이 필드를 반환하는 접근자 메서드를 제공하면 안됨
   ```java
   public class User{
-    // 이거 안됨
-    public static final User[] USERS1 = {new User("카리나", 19), new User("강해린", 21)};
-    private static final User[] USERS2 = {new User("카리나", 19), new User("강해린", 21)};
+      // 이거 안됨
+      public static final User[] USERS1 = {new User("카리나", 19), new User("강해린", 21)};
+      private static final User[] USERS2 = {new User("카리나", 19), new User("강해린", 21)};
   
-    // unmodifiableList 이용
-    public static final List<User> USER2_LIST = Collections.unmodifiableList(Arrays.asList(USERS2));
-  
-    // clone 이용
-    public static final User[] values() {
-        return USERS2.clone();
-    }
+      // unmodifiableList 이용
+      public static final List<User> USER2_LIST = Collections.unmodifiableList(Arrays.asList(USERS2));
+    
+      // clone 이용
+      public static final User[] values() {
+          return USERS2.clone();
+      }
   }
 
   ```

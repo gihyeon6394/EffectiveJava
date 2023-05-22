@@ -285,10 +285,28 @@ public class Aespa extends SmEnt implements Idol {
 }
 ```
 
-#### simple implementation <sup>단순 구현</sup>
+### simple implementation <sup>단순 구현</sup>
 
 - 골격 구현의 작은 변종
 - ex. AbstractMap.SimpleEntry
 - 골격 구현 클래스가 추상클래스가 아님
 - 동작하는 골격 구현 클래스
 - 그대로 써도 되고 필요에 따라 확장해도 됨
+
+
+``` java
+public class AbstractIdolSolo implements Idol {
+    @Override
+    public void practice() { System.out.println("강남 연습실로 갑니다."); }
+
+    @Override
+    public void goAirport() { System.out.println("인천공항으로 갑니다."); }
+
+    @Override
+    public void sing() { System.out.println("play music 1위 앨범"); }
+
+    @Override
+    public void viewMyCompany() { System.out.println("i have no company, i'm solo"); }
+}
+```
+

@@ -16,9 +16,7 @@ public class Item20 {
     }
 
     public interface IdolActor extends Idol, Actor {
-        void sing();
-
-        void act();
+        void musical();
     }
 
 

@@ -41,11 +41,11 @@ public class Item23 {
         }
     }
 
-    abstract class Figure{
+    abstract class Figure2{
         abstract double area();
     }
 
-    private class Circle extends Figure{
+    private class Circle extends Figure2{
         final double radius;
 
         Circle(double radius){
@@ -58,7 +58,7 @@ public class Item23 {
         }
     }
 
-    private class Rectangle extends Figure{
+    private class Rectangle extends Figure2{
         final double length;
         final double width;
 

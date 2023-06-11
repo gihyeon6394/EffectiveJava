@@ -1,4 +1,4 @@
-package com.effectiveJava.chapter4.Item25;
+package com.effectiveJava.chapter4.item25;
 
 public class Utensil {
     static final String NAME = "pan";

@@ -32,7 +32,7 @@ public class foo{
         super.finalize();
     }
 }
-    
+     
 ```
 
 <h2>contents</h2>

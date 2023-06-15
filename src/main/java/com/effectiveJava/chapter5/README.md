@@ -19,11 +19,11 @@
 - paramterized type<sup>매개변수화 타입</sup> : 제네릭 타입에 실제 타입 인자<sup>타입 인자</sup>를 넘겨서 만든 것
     - ex. `List<String>`
 - 타입 매개변수 : 제네릭 타입 선언부에 들어가는 식별자
-    - ex. 'List<E>'에서 E
+    - ex. `List<E>` 에서 E
 
 ## contents
 
-- item 26. 로 타입은 사용하지 말라
+- [item 26. 로 타입은 사용하지 말라](item26/README.md)
   > 로타입은 타입이 안정하지 않아, 런타임 예외를 발생시킬 위험이 있다. unbounded wildcard type이나 Object타입을 사용하라  
 - item 27. 비검사 경고를 제거하라
 - item 28. 배열보다는 리스트를 사용하라

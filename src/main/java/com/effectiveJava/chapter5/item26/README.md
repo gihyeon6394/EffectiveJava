@@ -14,13 +14,13 @@
 private final Collection stamps=...;
 
 // 실수로 coin 도 stamps에 넣을 수 있음
-        stamps.add(new Coin(...)); // compile warning : unchecked call to add(E) as a member of raw type Collection
+stamps.add(new Coin(...)); // compile warning : unchecked call to add(E) as a member of raw type Collection
 
 // 클라이언트가 꺼낼 때 ClassCastException 발생
-        for(Iterator i=stamps.iterator();i.hasNext();){
-        Stamp stamp=(Stamp)i.next(); // ClassCastException
-        stamp.cancel();
-        }
+for(Iterator i=stamps.iterator();i.hasNext();){
+  Stamp stamp=(Stamp)i.next(); // ClassCastException
+  stamp.cancel();
+}
 ```
 
 ### Raw type의 단점
@@ -37,7 +37,7 @@ private final Collection stamps=...;
 private final Collection<Stamp> stamps=...;
 
 // 컴파일 에러
-        stamps.add(new Coin(...)); // compile error : incompatible types: Coin cannot be converted to Stamp
+stamps.add(new Coin(...)); // compile error : incompatible types: Coin cannot be converted to Stamp
 ```
 
 - 컴파일러가 원소를 꺼내는 모든 곳에 형변환 추가

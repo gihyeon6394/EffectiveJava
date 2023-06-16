@@ -73,6 +73,7 @@ public class Idol {
 
     public Idol(Builder builder) {
         this.memberName = builder.memberName;
+        this.age = builder.age;
     }
 
 }

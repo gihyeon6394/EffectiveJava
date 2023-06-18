@@ -25,7 +25,8 @@
 
 - [item 26. 로 타입은 사용하지 말라](item26/README.md)
   > 로타입은 타입이 안정하지 않아, 런타임 예외를 발생시킬 위험이 있다. unbounded wildcard type이나 Object타입을 사용하라  
-- item 27. 비검사 경고를 제거하라
+- [item 27. 비검사 경고를 제거하라](item27/README.md)
+  > 비검사 경고가 없어지도록 모두 조치하라, 확신할때는 `@SuppressWarnings("unchecked")`를 사용
 - item 28. 배열보다는 리스트를 사용하라
 - item 29. 이왕이면 제네릭 타입으로 만들라
 - item 30. 이왕이면 제네릭 메서드로 만들라

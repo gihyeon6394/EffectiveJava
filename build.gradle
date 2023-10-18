@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'me.champeau.jmh' version '0.7.1'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.junit:junit-bom:5.9.3')
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    implementation 'org.hamcrest:hamcrest:2.2'
+
+    testImplementation 'org.openjdk.jmh:jmh-core:1.36'
+    testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
+    testImplementation 'io.cucumber:cucumber-java:7.13.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.13.0'
+    testImplementation 'io.cucumber:cucumber-java8:7.13.0'
+
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
+
+    implementation 'org.apache.commons:commons-lang3:3.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}

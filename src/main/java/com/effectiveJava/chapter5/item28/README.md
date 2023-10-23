@@ -48,11 +48,11 @@ public class Item28 {
 
 ```java
 ArrayList<String>[]stringLists=new ArrayList<String>[1]; // compile error : generic array creation
-        ArrayList<Integer> intList=Arrays.asList(1); // compile error : incompatible types: no instance(s) of type variable(s) T exist so that java.util.List<T> conforms to java.util.ArrayList<java.lang.Integer>
-        String[]strArray=new String[1];
-        Object[]objects=stringLists;
-        objects[0]=intList;
-        String s=stringLists[0].get(0);
+ArrayList<Integer> intList=Arrays.asList(1); // compile error : incompatible types: no instance(s) of type variable(s) T exist so that java.util.List<T> conforms to java.util.ArrayList<java.lang.Integer>
+String[]strArray=new String[1];
+Object[]objects=stringLists;
+objects[0]=intList;
+String s=stringLists[0].get(0);
 ```
 
 - 컴파일 에러 없이 위 코드를 허용한다면 마지막 줄에서 `ClassCastException`이 발생
